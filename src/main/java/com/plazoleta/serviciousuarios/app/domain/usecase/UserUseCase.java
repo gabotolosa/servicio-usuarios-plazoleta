@@ -15,57 +15,12 @@ public class UserUseCase implements IUserServicePort {
     }
 
     @Override
-    public void saveOwner(UserModel userModel) {
-        userPersistencePort.saveOwner(userModel);
+    public void saveUserModel(UserModel userModel) {
+        userPersistencePort.saveUserModel(userModel);
     }
 
     @Override
-    public List<UserModel> getAllOwner(Long roleId) {
-        return userPersistencePort.getAllOwner(roleId);
-    }
-
-    @Override
-    public UserModel getOwnerById(Long id) {
-        return userPersistencePort.getOwnerById(id);
-    }
-
-    @Override
-    public void updateOwner(UserModel userModel) {
-        userPersistencePort.updateOwner(userModel);
-    }
-
-    @Override
-    public void deleteOwner(Long id) {
-        userPersistencePort.deleteOwner(id);
-    }
-
-    @Override
-    public void saveRestaurant() {
-
-    }
-
-    @Override
-    public void saveEmployee(UserModel userModel) {
-        userPersistencePort.saveEmployee(userModel);
-    }
-
-    @Override
-    public List<UserModel> getAllEmployee(Long roleId) {
-        return userPersistencePort.getAllEmployee(roleId);
-    }
-
-    @Override
-    public UserModel getEmployeeById(Long id) {
-        return userPersistencePort.getEmployeeById(id);
-    }
-
-    @Override
-    public void updateEmployee(UserModel userModel) {
-        userPersistencePort.updateEmployee(userModel);
-    }
-
-    @Override
-    public void deleteEmployee(Long id) {
-        userPersistencePort.deleteEmployee(id);
+    public List<UserModel> getAllUser() {
+        return userPersistencePort.getAllUser();
     }
 }

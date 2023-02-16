@@ -1,16 +1,16 @@
 package com.plazoleta.serviciousuarios.app.application.dto.request;
 
-import com.plazoleta.serviciousuarios.app.domain.model.RoleModel;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.Setter;
 
 @Getter
-@Setter
+@AllArgsConstructor
 public class UserRequestDto {
+    private Long userId;
     private String firstName;
     private String lastName;
-    private Long cellphone;
+    private String cellphone;
     private String email;
     private String password;
-    private RoleModel idRole;
+    private Long idRole;
 }

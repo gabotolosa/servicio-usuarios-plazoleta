@@ -1,4 +1,4 @@
-package com.plazoleta.serviciousuarios.app.domain.usecase;
+package com.plazoleta.serviciousuarios.app.application.dto.response;
 
 import com.plazoleta.serviciousuarios.app.domain.api.IRoleServicePort;
 import com.plazoleta.serviciousuarios.app.domain.model.RoleModel;
@@ -6,11 +6,11 @@ import com.plazoleta.serviciousuarios.app.domain.spi.IRolePersistencePort;
 
 import java.util.List;
 
-public class RoleUseCase implements IRoleServicePort {
+public class RoleResponseDto implements IRoleServicePort {
 
     private final IRolePersistencePort rolePersistencePort;
 
-    public RoleUseCase(IRolePersistencePort rolePersistencePort) {
+    public RoleResponseDto(IRolePersistencePort rolePersistencePort) {
         this.rolePersistencePort = rolePersistencePort;
     }
 
