@@ -1,25 +1,16 @@
 package com.plazoleta.serviciousuarios.app.application.dto.response;
-import com.plazoleta.serviciousuarios.app.domain.api.IUserServicePort;
-import com.plazoleta.serviciousuarios.app.domain.model.UserModel;
-import com.plazoleta.serviciousuarios.app.domain.spi.IUserPersistencePort;
 
-import java.util.List;
+import lombok.Getter;
+import lombok.Setter;
 
-public class UserResponseDto implements IUserServicePort {
-
-    private final IUserPersistencePort userPersistencePort;
-
-    public UserResponseDto(IUserPersistencePort userPersistencePort) {
-        this.userPersistencePort = userPersistencePort;
-    }
-
-    @Override
-    public void saveUserModel(UserModel userModel) {
-        userPersistencePort.saveUserModel(userModel);
-    }
-
-    @Override
-    public List<UserModel> getAllUser() {
-        return userPersistencePort.getAllUser();
-    }
+@Getter
+@Setter
+public class UserResponseDto {
+    private Long id;
+    private String firstName;
+    private String lastName;
+    private String cellphone;
+    private String email;
+    private String password;
+    private Long roleId;
 }

@@ -7,7 +7,7 @@ import com.plazoleta.serviciousuarios.app.infrastructure.output.entity.UserEntit
 import com.plazoleta.serviciousuarios.app.infrastructure.output.mapper.IUserEntityMapper;
 import com.plazoleta.serviciousuarios.app.infrastructure.output.repository.IUserRepository;
 import lombok.RequiredArgsConstructor;
-import org.mapstruct.ap.shaded.freemarker.core.NonDateException;
+
 
 import java.util.List;
 
@@ -19,9 +19,8 @@ public class UserJpaAdapter implements IUserPersistencePort {
 
     @Override
     public UserModel saveUserModel(UserModel userModel) {
-        return userEntityMapper.toUserModel(userRepository.save(
-                userEntityMapper.toEntity(userModel)
-        ));
+        UserEntity user = userRepository.save(userEntityMapper.toEntity(userModel));
+        return userEntityMapper.toUserModel(user);
     }
 
     @Override

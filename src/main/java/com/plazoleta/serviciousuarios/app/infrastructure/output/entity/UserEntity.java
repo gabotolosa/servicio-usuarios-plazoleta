@@ -19,7 +19,6 @@ public class UserEntity {
 
     @Id
     @Column(unique = true, nullable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "nombre", nullable = false, length = 50)
@@ -33,7 +32,7 @@ public class UserEntity {
     private String cellphone;
 
     @Column(name = "correo", nullable = false)
-    @Email(message = "invalid email format")
+    //@Email(message = "invalid email format")
     private String email;
 
     @Column(name = "clave", nullable = false)
