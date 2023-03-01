@@ -2,16 +2,26 @@ package com.plazoleta.serviciousuarios.app.domain.model;
 
 public class RoleModel {
 
-    private Long roleId;
+    private Long Id;
     private String name;
     private String details;
 
-    public Long getRoleId() {
-        return roleId;
+    public RoleModel() {
+        super();
     }
 
-    public void setRoleId(Long roleId) {
-        this.roleId = roleId;
+    public RoleModel(Long id, String name, String details) {
+        Id = id;
+        this.name = name;
+        this.details = details;
+    }
+
+    public Long getId() {
+        return Id;
+    }
+
+    public void setId(Long id) {
+        Id = id;
     }
 
     public String getName() {
@@ -27,16 +37,6 @@ public class RoleModel {
     }
 
     public void setDetails(String details) {
-        this.details = details;
-    }
-
-    public RoleModel() {
-        super();
-    }
-
-    public RoleModel(Long roleId, String name, String details) {
-        this.roleId = roleId;
-        this.name = name;
         this.details = details;
     }
 }

@@ -13,3 +13,4 @@ spring:
     show-sql: true
 appDescription: "Reto Powerup"
 appVersion: "1.0.0"
+

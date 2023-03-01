@@ -1,6 +1,5 @@
 package com.plazoleta.serviciousuarios.app.application.mapper;
 
-import com.plazoleta.serviciousuarios.app.application.dto.request.RoleRequestDto;
 import com.plazoleta.serviciousuarios.app.application.dto.response.RoleResponseDto;
 import com.plazoleta.serviciousuarios.app.domain.model.RoleModel;
 import org.mapstruct.Mapper;
@@ -12,7 +11,6 @@ import java.util.List;
         unmappedTargetPolicy = ReportingPolicy.IGNORE,
         unmappedSourcePolicy = ReportingPolicy.IGNORE)
 public interface IRoleResponseMapper {
-
-    RoleRequestDto toRoleResponse(RoleModel roleModel);
-    List<RoleResponseDto> toRoleResponseList(List<RoleModel> roleModelList);
+    RoleResponseDto toResponse(RoleModel roleModel);
+    List<RoleResponseDto> toResponseList(List<RoleModel> roleModelList);
 }

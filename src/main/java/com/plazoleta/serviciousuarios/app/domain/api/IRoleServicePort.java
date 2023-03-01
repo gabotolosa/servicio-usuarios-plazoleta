@@ -7,6 +7,7 @@ import java.util.List;
 public interface IRoleServicePort {
 
     void saveRole(RoleModel roleModel);
-    List<RoleModel> getAllRole();
-
+    List<RoleModel> getAllRoles();
+    RoleModel getRoleById(Long roleId);
+    void deleteRole(Long roleId);
 }

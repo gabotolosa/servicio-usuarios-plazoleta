@@ -6,6 +6,7 @@ import com.plazoleta.serviciousuarios.app.application.handler.IRoleHandler;
 import com.plazoleta.serviciousuarios.app.application.mapper.IRoleRequestMapper;
 import com.plazoleta.serviciousuarios.app.application.mapper.IRoleResponseMapper;
 import com.plazoleta.serviciousuarios.app.domain.api.IRoleServicePort;
+import com.plazoleta.serviciousuarios.app.domain.model.RoleModel;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,11 +25,13 @@ public class RoleHandler implements IRoleHandler {
 
     @Override
     public void saveRole(RoleRequestDto roleRequestDto) {
-        roleServicePort.saveRole(roleRequestMapper.toRole(roleRequestDto));
+        RoleModel roleModel = roleRequestMapper.toRole(roleRequestDto);
+        roleServicePort.saveRole(roleModel);
     }
 
     @Override
     public List<RoleResponseDto> getAllRoles() {
-        return roleResponseMapper.toRoleResponseList(roleServicePort.getAllRole());
+
+        return roleResponseMapper.toResponseList(roleServicePort.getAllRoles());
     }
 }

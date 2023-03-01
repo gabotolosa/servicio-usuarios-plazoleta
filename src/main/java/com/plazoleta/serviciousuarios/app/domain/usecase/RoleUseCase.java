@@ -20,7 +20,17 @@ public class RoleUseCase implements IRoleServicePort {
     }
 
     @Override
-    public List<RoleModel> getAllRole() {
-        return rolePersistencePort.getAllRole();
+    public List<RoleModel> getAllRoles() {
+        return rolePersistencePort.getAllRoles();
+    }
+
+    @Override
+    public RoleModel getRoleById(Long roleId) {
+        return rolePersistencePort.getRoleById(roleId);
+    }
+
+    @Override
+    public void deleteRole(Long roleId) {
+        rolePersistencePort.deleteRole(roleId);
     }
 }

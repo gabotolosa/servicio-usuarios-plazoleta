@@ -10,14 +10,13 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class OpenApiConfiguration {
-
     @Bean
     public OpenAPI customOpenApi(@Value("${appdescription}") String appDescription,
                                  @Value("${appversion}") String appVersion){
         return new OpenAPI()
                 .components(new Components())
                 .info(new Info()
-                        .title("Hexagonal Power-up API")
+                        .title("Power-up API")
                         .version(appVersion)
                         .description(appDescription)
                         .termsOfService("http://swagger.io/terms/")

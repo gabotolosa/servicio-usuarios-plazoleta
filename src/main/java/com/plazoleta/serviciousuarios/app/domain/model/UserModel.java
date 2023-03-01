@@ -1,37 +1,44 @@
 package com.plazoleta.serviciousuarios.app.domain.model;
+
 public class UserModel {
-
-    ValidationModel validationModel =  new ValidationModel();
-
-    private Long userId;
+    private Long id;
+    private Long dni;
     private String firstName;
     private String lastName;
     private String cellphone;
     private String email;
     private String password;
-    private Long idRole;
+    private Long roleId;
 
     public UserModel() {
         super();
     }
 
-    public UserModel(Long userId, String firstName, String lastName, String cellphone, String email, String password, Long idRole) {
-
-        this.userId = validationModel.validateUserId(userId);
-        this.firstName = validationModel.validate(firstName);
-        this.lastName = validationModel.validate(lastName);
-        this.cellphone = validationModel.validateCellphone(cellphone);
-        this.email = validationModel.validateEmail(email);
-        this.password = validationModel.hashedPassword(password);
-        this.idRole = 2L;
+    public UserModel(Long id, Long dni, String firstName, String lastName, String cellphone, String email, String password, Long roleId) {
+        this.id = id;
+        this.dni = dni;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.cellphone = cellphone;
+        this.email = email;
+        this.password = password;
+        this.roleId = roleId;
     }
 
-    public Long getUserId() {
-        return userId;
+    public Long getId() {
+        return id;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getDni() {
+        return dni;
+    }
+
+    public void setDni(Long dni) {
+        this.dni = dni;
     }
 
     public String getFirstName() {
@@ -74,11 +81,11 @@ public class UserModel {
         this.password = password;
     }
 
-    public Long getIdRole() {
-        return idRole;
+    public Long getRoleId() {
+        return roleId;
     }
 
-    public void setIdRole(Long idRole) {
-        this.idRole = idRole;
+    public void setRoleId(Long roleId) {
+        this.roleId = roleId;
     }
 }
